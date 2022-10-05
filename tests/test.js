@@ -57,8 +57,8 @@ describe("People", () => {
           res.should.have.status(200);
           console.log(res.body);
           res.body.name.should.be.eql("Tom");
+          done();
         });
-      done();
     });
     it("should return an error if the index is >= the length of the array", (done) => {
       chai
@@ -66,8 +66,8 @@ describe("People", () => {
         .get("/api/v1/people/43")
         .end((err, res) => {
           res.should.have.status(404);
+          done();
         });
-      done();
     });
   });
 });
